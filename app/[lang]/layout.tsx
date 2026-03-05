@@ -2,8 +2,11 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/header";
+import Footer from "@/components/footer";
 import Language from "@/components/language";
 import { getDictionary } from "@/lib/dictionary"
+
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -36,6 +39,7 @@ export default async function RootLayout({
         <Header dict={dict}/> {/* Add the Header component here */}
         <Language/>
         {children}
+        <Footer></Footer>
       </body>
     </html>
   );
