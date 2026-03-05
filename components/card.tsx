@@ -7,11 +7,12 @@ interface CardProps {
   imageUrl: string;
 }
 
-const Card = ({title, description, imageUrl }: CardProps) => {
+const Card = ({ title, description, imageUrl }: CardProps) => {
   return (
     <div className="border rounded-lg shadow-lg overflow-hidden max-w-sm">
       {/* 3. We use props to render dynamic content. */}
-      <Image src={imageUrl}
+      <Image
+        src={imageUrl}
         alt={`Imagen para ${title}`}
         width={500} // Usamos dimensiones genéricas para el layout
         height={300}
