@@ -1,13 +1,13 @@
-import React from 'react';
+
 import Link from "next/link";
 import Image from 'next/image'; 
+import Language from './language';
 
 
-function Header({ dict }: { dict: { "logo": string,
-  "name": string,
-  "ini": string,
-  "about": string,
-  "contact": string} }) {
+
+
+function Header({ dict }: { dict: { "logo": string, "name": string, "ini": string, "about": string, "contact": string} }) {
+  
   return (
     <header className="bg-[#FDB608] text-black p-4">
       <div className="container mx-auto flex justify-between items-center">
@@ -21,10 +21,11 @@ function Header({ dict }: { dict: { "logo": string,
           />
           
         </Link>
-        <nav>
+        <nav className="flex flex-row">
           <Link href="/" className="px-3 hover:text-gray-300">{dict.ini}</Link>
           <Link href="/acerca" className="px-3 hover:text-gray-300">{dict.about}</Link>
           <Link href="/contacto" className="px-3 hover:text-gray-300">{dict.contact}</Link>
+          <Language/>
         </nav>
       </div>
     </header>

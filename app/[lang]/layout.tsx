@@ -3,10 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
-import Language from "@/components/language";
 import { getDictionary } from "@/lib/dictionary"
-
-
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -17,6 +14,7 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
+
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -37,7 +35,6 @@ export default async function RootLayout({
     <html lang={lang}>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <Header dict={dict}/> {/* Add the Header component here */}
-        <Language/>
         {children}
         <Footer></Footer>
       </body>

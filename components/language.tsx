@@ -11,9 +11,9 @@ export default function language() {
     router.push(`/${lang}`)
   }
   return(
-    <div>
-      <button className="flex flex-col border p-4 shadow-lg rounded-md" onClick={() => cambiarIdioma("es")}>ES</button>
-      <button className="flex flex-col border p-4 shadow-lg rounded-md" onClick={() => cambiarIdioma("en")}>EN</button>
+    <div className= "flex flex-row">
+      <button className="flex flex-row border p-2 shadow-lg rounded-md" onClick={() => cambiarIdioma("es")}>ES</button>
+      <button className="flex flex-row border p-2 shadow-lg rounded-md" onClick={() => cambiarIdioma("en")}>EN</button>
     </div>
   )
 }
