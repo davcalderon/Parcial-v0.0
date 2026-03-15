@@ -1,6 +1,9 @@
 
 import Image from 'next/image';
 
+
+
+
 async function getCharacter(id:string) {
   const res = await fetch(`https://hp-api.onrender.com/api/character/${id}`);
   //console.log(res)
@@ -8,8 +11,17 @@ async function getCharacter(id:string) {
   
 }
 
+
+
+const BorderColorHouses = {
+   Gryffindor: 'border-[#740001]',
+   Slytherin: 'border-[#1A472A]',
+   Ravenclaw: 'border-[#0E1A40]',
+   Hufflepuff: 'border-[#FFD800]',
+   NoHouse: 'border-[#D1D5DB]',
+}
+
 export default async function personaje({params}: { params: Promise<{ id: string }>}){
-  console.log("popo")
   const {id} = await params
   const character = (await getCharacter(id))[0]
   console.log("personaje: ", character)
@@ -17,7 +29,7 @@ export default async function personaje({params}: { params: Promise<{ id: string
   return(
     <main className="min-h-[575px] flex flex-col overflow-hidden justify-center items-center">
       <h2 className="text-center">{character.name}</h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 border rounded-lg shadow-lg overflow-hidden min-h-[300px] max-w-sm align-center">
+      <div className={`grid grid-cols-1 ${BorderColorHouses[character.house as 'Gryffindor' | 'Slytherin' | 'Ravenclaw' | 'Hufflepuff' | 'NoHouse']} md:grid-cols-2 border-4 rounded-lg shadow-lg overflow-hidden min-h-[300px] max-w-sm align-center`}>
         <div className="p-8 flex flex-col justify-center">
           <p>{`Casa: ${character.house}`}</p>
           <p>{`Genero: ${character.gender}`}</p>

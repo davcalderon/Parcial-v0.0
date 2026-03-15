@@ -15,8 +15,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
 
   return (
   <main  className="flex flex-col items-center  bg-[#e0e0e0] text-black p-4">
-    <h1>{dict.welcome}</h1>
-    <h2 className="center-text text-[#FDB608] font-bold">Personajes de Harry Potter</h2>
+    <h1 className="center-text text-[#FDB608] font-bold p-4">{dict.title}</h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       {characters.map((dato: { id: string; name: string; image: string; house: string }) => 
         <Link href={`/${lang}/personaje/${dato.id}`} key={dato.id}>

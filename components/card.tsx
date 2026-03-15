@@ -29,7 +29,7 @@ const Card = ({ title, imageUrl, house }: CardProps) => {
 
   //const color=house
   return (
-    <div className={`${BgColorHouses[house]} ${BorderColorHouses[house]} rounded-lg shadow-lg overflow-hidden max-w-sm`}>
+    <div className={`${BgColorHouses[house]} ${BorderColorHouses[house]} border-4 rounded-lg shadow-lg overflow-hidden max-w-sm`}>
       {/* 3. We use props to render dynamic content. */}
       <div>
         <h4 className={`text-white font-bold`}>{title}</h4>
